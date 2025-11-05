@@ -1,0 +1,49 @@
+/* Georgian Font Styles */
+
+/* Headers and Titles */
+h1, h2, h3, 
+.section-title, 
+.card-title,
+.article-title,
+.team-title,
+.department-title {
+    font-family: 'TBCContracticaCAPS-Black', Arial, sans-serif !important;
+    color: rgb(0, 102, 107) !important;
+}
+
+/* Regular Text */
+p, 
+.card-description,
+.article-body,
+.org-description,
+.event-description,
+.contact-details,
+.settings-text,
+.nav-label,
+.tab,
+.back-button {
+    font-family: 'TBCContractica-Regular', Arial, sans-serif !important;
+}
+
+/* Special Cases - Regular Font */
+.card-date,
+.article-meta,
+.event-dates,
+.event-location,
+.contact-item,
+.member-info {
+    font-family: 'TBCContractica-Regular', Arial, sans-serif !important;
+}
+
+/* Organization Names - Headers */
+.org-name {
+    font-family: 'TBCContracticaCAPS-Black', Arial, sans-serif !important;
+    font-weight: bold;
+    color: rgb(0, 102, 107) !important;
+}
+
+/* Event Category - Headers */
+.event-category {
+    font-family: 'TBCContracticaCAPS-Black', Arial, sans-serif !important;
+    color: rgb(0, 102, 107) !important;
+}

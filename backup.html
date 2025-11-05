@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily GROUP</title>
+    <script src="js/content-manager.js"></script>
+    <style>
+        @font-face {
+            font-family: 'TBCContractica-Regular';
+            src: url('Fonts/TBCContractica-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'TBCContracticaCAPS-Black';
+            src: url('Fonts/TBCContracticaCAPS-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Apply regular font to all Georgian text */
+        body {
+            font-family: 'TBCContractica-Regular', Arial, sans-serif;
+        }
+
+        /* Apply black caps font to headers */
+        h1, h2, h3, .section-title, .card-title, .article-title {
+            font-family: 'TBCContracticaCAPS-Black', Arial, sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="georgian-fonts.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="container">
+            <!-- Main Header - Always visible -->
+            <div class="main-header">
+                <!-- Header -->
+                <div class="header">
+                    <h1 class="header-title">
+                        <img src="logo.svg" alt="Daily GROUP" class="logo" />
+                        <span class="visually-hidden">Daily GROUP</span>
+                    </h1>
+                </div>
+
+                <!-- Tabs - Always visible -->
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('news', this)">მთავარი</button>
+                    <button class="tab" onclick="showTab('figures', this)">მაჩვენებლები</button>
+                    <button class="tab" onclick="showTab('contact', this)">კონტაქტი</button>
+                </div>
+            </div>
+
+            <!-- Overview Content -->
+            <div id="overview" class="content">
+                <div class="section">
+                    <h2 class="section-title">ორგანიზაციული სტრუქტურა</h2>
+                    <div class="org-list">
+                        <div class="org-item" onclick="showHandbookSection('marketing')">
+                            <div class="org-icon">🎯</div>
+                            <div class="org-content">
+                                <div class="org-name">მარკეტინგის დეპარტამენტი</div>
+                                <div class="org-description">ბრენდის მართვა, რეკლამა და ბაზრის კვლევა</div>
+                            </div>
+                            <div class="org-arrow">›</div>
+                        </div>
+
+                        <div class="org-item" onclick="showHandbookSection('ecommerce')">
+                            <div class="org-icon">🛒</div>
+                            <div class="org-content">
+                                <div class="org-name">ელექტრონული კომერცია</div>
+                                <div class="org-description">ონლაინ გაყიდვები და ციფრული პლატფორმები</div>
+                            </div>
+                            <div class="org-arrow">›</div>
+                        </div>
+
+                        <div class="org-item" onclick="showHandbookSection('operations')">
+                            <div class="org-icon">⚙️</div>
+                            <div class="org-content">
+                                <div class="org-name">ოპერაციები</div>
+                                <div class="org-description">მაღაზიების ოპერაციები და ლოჯისტიკის მართვა</div>
+                            </div>
+                            <div class="org-arrow">›</div>
+                        </div>
+
+                        <div class="org-item" onclick="showHandbookSection('finance')">
+                            <div class="org-icon">💰</div>
+                            <div class="org-content">
+                                <div class="org-name">ფინანსები</div>
+                                <div class="org-description">ფინანსური დაგეგმვა და მართვა</div>
+                            </div>
+                            <div class="org-arrow">›</div>
+                        </div>
+
+                        <div class="org-item" onclick="showHandbookSection('hr')">
+                            <div class="org-icon">👥</div>
+                            <div class="org-content">
+                                <div class="org-name">ადამიანური რესურსები</div>
+                                <div class="org-description">თანამშრომელთა მართვა და განვითარება</div>
+                            </div>
+                            <div class="org-arrow">›</div>
+                        </div>
+
+                        <div class="org-item" onclick="showHandbookSection('it')">
+                            <div class="org-icon">💻</div>
+                            <div class="org-content">
+                                <div class="org-name">IT და ციფრული</div>
+                                <div class="org-description">ტექნოლოგიური ინფრასტრუქტურა და ციფრული გადაწყვეტილებები</div>
+                            </div>
+                            <div class="org-arrow">›</div>
+                        </div>
+
+                        <div class="org-item" onclick="showHandbookSection('retail')">
+                            <div class="org-icon">🏪</div>
+                            <div class="org-content">
+                                <div class="org-name">საცალო ვაჭრობის განვითარება</div>
+                                <div class="org-description">მაღაზიების გაფართოება და საცალო სტრატეგია</div>
+                            </div>
+                            <div class="org-arrow">›</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department Content Section -->
+                <div id="department-content" class="section" style="display: none;">
+                    <div class="section-header">
+                        <button class="back-button" onclick="showHandbookSection('overview')">← დეპარტამენტებში დაბრუნება</button>
+                        <h2 class="section-title" id="department-title"></h2>
+                    </div>
+                    <div class="department-news">
+                        <!-- News Cards - Marketing -->
+                        <div class="handbook-news" data-department="marketing">
+                            <div class="card" onclick="showArticle('marketing-campaign')">
+                                <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                                <div class="card-content">
+                                    <div class="card-title">გლობალური მარკეტინგული კამპანიის დაწყება</div>
+                                    <div class="card-date">1 ნოემბერი, 2025</div>
+                                    <div class="card-description">
+                                        ახალი ერთიანი მარკეტინგული სტრატეგია ყველა რეგიონში შთამბეჭდავ შედეგებს აჩვენებს.
+                                    </div>
+                                </div>
+                                <div class="card-arrow">›</div>
+                            </div>
+                        </div>
+
+                        <!-- News Cards - E-Commerce -->
+                        <div class="handbook-news" data-department="ecommerce">
+                            <div class="card" onclick="showArticle('digital-platform')">
+                                <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                                <div class="card-content">
+                                    <div class="card-title">ციფრული პლატფორმის განახლება</div>
+                                    <div class="card-date">30 ოქტომბერი, 2025</div>
+                                    <div class="card-description">
+                                        ელექტრონული კომერციის პლატფორმის გაუმჯობესება მომხმარებლის შოპინგის გამოცდილებას აუმჯობესებს.
+                                    </div>
+                                </div>
+                                <div class="card-arrow">›</div>
+                            </div>
+                        </div>
+
+                        <!-- News Cards - Operations -->
+                        <div class="handbook-news" data-department="operations">
+                            <div class="card" onclick="showArticle('supply-chain')">
+                                <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                                <div class="card-content">
+                                    <div class="card-title">მიწოდების ჯაჭვის ოპტიმიზაცია</div>
+                                    <div class="card-date">28 ოქტომბერი, 2025</div>
+                                    <div class="card-description">
+                                        ახალი ლოჯისტიკური სისტემის დანერგვა მიწოდების დროს 30%-ით ამცირებს.
+                                    </div>
+                                </div>
+                                <div class="card-arrow">›</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article View Section -->
+                <div id="article-view" class="section article-section" style="display: none;">
+                    <div class="section-header">
+                        <button class="back-button" onclick="closeArticle()">← Back</button>
+                    </div>
+                    <!-- Marketing Campaign Article -->
+                    <div class="article-content" id="marketing-campaign">
+                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <h1 class="article-title">გლობალური მარკეტინგული კამპანიის დაწყება</h1>
+                        <div class="article-meta">
+                            <span class="article-date">1 ნოემბერი, 2025</span>
+                            <span class="article-department">მარკეტინგის დეპარტამენტი</span>
+                        </div>
+                        <div class="article-body">
+                            <p>მარკეტინგის დეპარტამენტი ამაყობს, რომ აცხადებს ჩვენი ახალი გლობალური მარკეტინგული კამპანიის დაწყებას, რომელიც შექმნილია ჩვენი ბრენდის გზავნილის გასაერთიანებლად ყველა რეგიონში, ადგილობრივი ბაზრის თავისებურებების გათვალისწინებით.</p>
+                            
+                            <h2>კამპანიის მთავარი პუნქტები</h2>
+                            <ul>
+                                <li>ერთიანი ბრენდის გზავნილი 48 ქვეყანაში</li>
+                                <li>ლოკალიზებული კონტენტი თითოეული ბაზრისთვის</li>
+                                <li>პირველ რიგში ციფრული მიდგომა ტრადიციული მედიის მხარდაჭერით</li>
+                                <li>ფოკუსი მდგრად განვითარებასა და საზოგადოების ჩართულობაზე</li>
+                            </ul>
+
+                            <h2>პირველი შედეგები</h2>
+                            <p>პირველი კვირის მონაცემები გვიჩვენებს:</p>
+                            <ul>
+                                <li>ბრენდის ცნობადობის 25%-იანი ზრდა</li>
+                                <li>სოციალურ მედიაში ჩართულობის 40%-იანი ზრდა</li>
+                                <li>მაღაზიაში ვიზიტორების 15%-იანი ზრდა</li>
+                            </ul>
+
+                            <p>კამპანია გაგრძელდება სხვადასხვა არხებში მომდევნო სამი თვის განმავლობაში, მუდმივი მონიტორინგითა და ოპტიმიზაციით შედეგების საფუძველზე.</p>
+                        </div>
+                    </div>
+
+                    <!-- Digital Platform Article -->
+                    <div class="article-content" id="digital-platform">
+                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <h1 class="article-title">ციფრული პლატფორმის განახლება</h1>
+                        <div class="article-meta">
+                            <span class="article-date">30 ოქტომბერი, 2025</span>
+                            <span class="article-department">ელექტრონული კომერციის დეპარტამენტი</span>
+                        </div>
+                        <div class="article-body">
+                            <p>ჩვენი ელექტრონული კომერციის პლატფორმამ გაიარა მნიშვნელოვანი განახლება მომხმარებლის შოპინგის გამოცდილების გასაუმჯობესებლად და ოპერაციული ეფექტურობის გასაზრდელად.</p>
+                            
+                            <h2>ძირითადი გაუმჯობესებები</h2>
+                            <ul>
+                                <li>ახალი AI-ზე დაფუძნებული პროდუქტების რეკომენდაციები</li>
+                                <li>გაუმჯობესებული მობილური რესპონსიულობა</li>
+                                <li>გაუმჯობესებული გადახდის პროცესი</li>
+                                <li>მარაგების რეალურ დროში მართვა</li>
+                            </ul>
+
+                            <h2>შედეგების მაჩვენებლები</h2>
+                            <ul>
+                                <li>გვერდის ჩატვირთვის 50%-ით გაზრდილი სიჩქარე</li>
+                                <li>კალათის მიტოვების 30%-ით შემცირება</li>
+                                <li>მობილური კონვერსიების 20%-იანი ზრდა</li>
+                            </ul>
+
+                            <p>პლატფორმის განახლება წარმოადგენს მნიშვნელოვან ნაბიჯს ჩვენს ციფრულ ტრანსფორმაციაში, რაც საშუალებას გვაძლევს უკეთ მოვემსახუროთ ჩვენს მომხმარებლებს სულ უფრო მეტად ციფრულ სამყაროში.</p>
+                        </div>
+                    </div>
+
+                    <!-- Supply Chain Article -->
+                    <div class="article-content" id="supply-chain">
+                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <h1 class="article-title">Supply Chain Optimization</h1>
+                        <div class="article-meta">
+                            <span class="article-date">October 28, 2025</span>
+                            <span class="article-department">Operations Department</span>
+                        </div>
+                        <div class="article-body">
+                            <p>A new logistics system implementation has significantly improved our supply chain efficiency, resulting in faster delivery times and reduced costs.</p>
+                            
+                            <h2>System Features</h2>
+                            <ul>
+                                <li>Real-time tracking and monitoring</li>
+                                <li>Automated route optimization</li>
+                                <li>Predictive inventory management</li>
+                                <li>Integration with supplier systems</li>
+                            </ul>
+
+                            <h2>Impact Analysis</h2>
+                            <ul>
+                                <li>30% reduction in delivery times</li>
+                                <li>25% decrease in transportation costs</li>
+                                <li>40% improvement in inventory accuracy</li>
+                                <li>20% reduction in wastage</li>
+                            </ul>
+
+                            <p>This optimization project demonstrates our commitment to operational excellence and continuous improvement in our supply chain management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Figures Content -->
+            <div id="figures" class="content">
+                <div class="section">
+                    <!-- Statistics Table -->
+                    <div class="stats-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>მაღაზიების რაოდენობა</th>
+                                    <th>საცალო გაყიდვები ევრო '000</th>
+                                    <th>საცალო გაყიდვები %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="brand-name">SPAR Express</td>
+                                    <td>1,556</td>
+                                    <td>1,650,000</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td class="brand-name">SPAR</td>
+                                    <td>10,356</td>
+                                    <td>27,820,000</td>
+                                    <td>56</td>
+                                </tr>
+                                <tr>
+                                    <td class="brand-name">EUROSPAR</td>
+                                    <td>1,546</td>
+                                    <td>13,100,000</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td class="brand-name">INTERSPAR</td>
+                                    <td>351</td>
+                                    <td>6,690,000</td>
+                                    <td>14</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td class="brand-name">ჯამი</td>
+                                    <td>13,809</td>
+                                    <td>49,260,000</td>
+                                    <td>100</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Additional Statistics -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-label">მაღაზიის საშუალო ფართობი (მ2)</div>
+                            <div class="stat-value">563</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">საცალო გაყიდვების საერთო ფართობი (მ2)</div>
+                            <div class="stat-value">7,769,961</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">საშუალო ბრუნვა მ2-ზე (ევრო)</div>
+                            <div class="stat-value">6,340</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Content -->
+            <div id="contact" class="content">
+                <div class="section">
+                    <h2 class="section-title">ცენტრალური ოფისი</h2>
+                    
+                    <div class="company-info">
+                        <h3>SPAR International</h3>
+                        <p>Rokin 99-101<br>
+                        1012 KM Amsterdam</p>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>0031 20 626 6749</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>info@spar-international.com</span>
+                        </div>
+                    </div>
+
+                    <div class="team-section">
+                        <h3 class="team-title">მენეჯმენტის გუნდი</h3>
+                        
+                        <div class="team-member">
+                            <span class="member-icon">✉️</span>
+                            <div class="member-info">
+                                <div class="member-name">ბ-ნი ტობიას ვასმუტი</div>
+                                <div class="member-role">აღმასრულებელი დირექტორი</div>
+                            </div>
+                        </div>
+
+                        <div class="team-member">
+                            <span class="member-icon">✉️</span>
+                            <div class="member-info">
+                                <div class="member-name">ბ-ნი დომინიკ ჰოლი</div>
+                                <div class="member-role">SPAR International-ის პრეზიდენტი</div>
+                            </div>
+                        </div>
+
+                        <!-- Add more team members as needed -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Content -->
+            <div id="news" class="content active">
+                <div class="section">
+                    <h2 class="section-title">კომპანიის სიახლეები</h2>
+                    
+                    <!-- Image Slider -->
+                    <div class="image-slider">
+                        <div class="slider-container" id="sliderContainer">
+                            <div class="slide">კომპანიის შენობა 1</div>
+                            <div class="slide">კომპანიის შენობა 2</div>
+                            <div class="slide">კომპანიის შენობა 3</div>
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="goToSlide(0)"></span>
+                            <span class="dot" onclick="goToSlide(1)"></span>
+                            <span class="dot" onclick="goToSlide(2)"></span>
+                        </div>
+                    </div>
+
+                    <!-- News Cards -->
+                <!-- News Cards -->
+                                <div class="card" data-department="retail" onclick="showArticle('flagship-store')">
+                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-content">
+                        <div class="card-title">კომპანია ხსნის ახალ ფლაგმან სუპერმარკეტს</div>
+                        <div class="card-date">31 ოქტომბერი, 2025</div>
+                        <div class="card-description">
+                            ჩვენმა კომპანიამ გახსნა ახალი ფლაგმანი სუპერმარკეტი ახალი თაობის მაღაზიის დიზაინით. ეს ინოვაციური სივრცე წარმოაჩენს ჩვენს ერთგულებას თანამედროვე საცალო ვაჭრობის სრულყოფილებისადმი.
+                        </div>
+                    </div>
+                    <div class="card-arrow">›</div>
+                </div>
+
+                <div class="card" data-department="finance" onclick="showArticle('investment')">
+                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-content">
+                        <div class="card-title">კომპანია 14 მილიონ ევროზე მეტს აინვესტირებს ქვეყნის მასშტაბით</div>
+                        <div class="card-date">29 ოქტომბერი, 2025</div>
+                        <div class="card-description">
+                            ჩვენ გამოვყავით 14 მილიონ ევროზე მეტი მაღაზიების განახლებისთვის მთელი ქვეყნის მასშტაბით. ბოლო ინვესტიციები აჩვენებს ჩვენს ერთგულებას ზრდისადმი.
+                        </div>
+                    </div>
+                    <div class="card-arrow">›</div>
+                </div>
+
+                <div class="card" data-department="operations" onclick="showArticle('modernization')">
+                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-content">
+                        <div class="card-title">პარტნიორი ანახლებს სუპერმარკეტების ქსელს</div>
+                        <div class="card-date">28 ოქტომბერი, 2025</div>
+                        <div class="card-description">
+                            ქვეყნის ჩრდილოეთში, ჩვენი პარტნიორი განაგრძობს მაღაზიათა ქსელის განვითარებას მოდერნიზაციისა და გაფართოების გზით.
+                        </div>
+                    </div>
+                    <div class="card-arrow">›</div>
+                </div>
+
+                <div class="card" data-department="finance" onclick="showArticle('investment')">
+                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-content">
+                        <div class="card-title">კომპანია 14 მილიონ ევროზე მეტს აინვესტირებს ქვეყნის მასშტაბით</div>
+                        <div class="card-date">29 ოქტომბერი, 2025</div>
+                        <div class="card-description">
+                            ჩვენ გამოვყავით 14 მილიონ ევროზე მეტი მაღაზიების განახლებისთვის მთელი ქვეყნის მასშტაბით. ბოლო გაუმჯობესებები ასახავს კომპანიის ფოკუსს მომხმარებელთა გაუმჯობესებულ გამოცდილებაზე.
+                        </div>
+                    </div>
+                    <div class="card-arrow">›</div>
+                </div>
+
+                <div class="card" data-department="operations" onclick="showArticle('network-modernization')">
+                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-content">
+                        <div class="card-title">პარტნიორი ანახლებს სუპერმარკეტების ქსელს</div>
+                        <div class="card-date">28 ოქტომბერი, 2025</div>
+                        <div class="card-description">
+                            ქვეყნის ჩრდილოეთში, ჩვენი პარტნიორი აგრძელებს მაღაზიათა ქსელის განვითარებას სამი განახლებული ლოკაციის ხელახალი გახსნით.
+                        </div>
+                    </div>
+                    <div class="card-arrow">›</div>
+                </div>
+
+                <div class="card" data-department="marketing" onclick="showArticle('cancer-awareness')">
+                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-content">
+                        <div class="card-title">ქვეყნის ორგანიზაციები მხარს უჭერენ ძუძუს კიბოს შესახებ ცნობადობის ამაღლებას</div>
+                        <div class="card-date">27 ოქტომბერი, 2025</div>
+                        <div class="card-description">
+                            ოქტომბერი არის ძუძუს კიბოს შესახებ ცნობადობის ამაღლების თვე, და ჩვენი ქვეყნის ორგანიზაციები მთელი მსოფლიოს მასშტაბით აქტიურად უჭერენ მხარს ამ მნიშვნელოვან საქმეს.
+                        </div>
+                    </div>
+                    <div class="card-arrow">›</div>
+                </div>
+
+                <!-- Article View Section -->
+                <div id="news-article-view" class="article-section" style="display: none;">
+                    <div class="section-header">
+                        <button class="back-button" onclick="closeNewsArticle()">← სიახლეებში დაბრუნება</button>
+                    </div>
+
+                    <!-- Flagship Store Article -->
+                    <div class="article-content" id="flagship-store">
+                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <h1 class="article-title">კომპანია ხსნის ახალ ფლაგმან სუპერმარკეტს</h1>
+                        <div class="article-meta">
+                            <span class="article-date">31 ოქტომბერი, 2025</span>
+                            <span class="article-department">საცალო ვაჭრობის განვითარება</span>
+                        </div>
+                        <div class="article-body">
+                            <p>ჩვენმა კომპანიამ მნიშვნელოვან მიღწევას მიაღწია ახალი ფლაგმანი სუპერმარკეტის გახსნით, რომელიც გამოირჩევა უახლესი დიზაინითა და ტექნოლოგიებით, რაც ახალ სტანდარტებს ამკვიდრებს საცალო ვაჭრობაში.</p>
+                            
+                            <h2>მაღაზიის მახასიათებლები</h2>
+                            <ul>
+                                <li>4,000 კვადრატული მეტრი სავაჭრო ფართი</li>
+                                <li>სმარტ შოპინგის ტექნოლოგიების ინტეგრაცია</li>
+                                <li>ენერგოეფექტური სისტემები</li>
+                                <li>გაუმჯობესებული მომხმარებლის გამოცდილების ზონები</li>
+                            </ul>
+
+                            <h2>ინოვაციური მახასიათებლები</h2>
+                            <p>ახალი მაღაზია მოიცავს რამდენიმე ინოვაციურ ფუნქციას:</p>
+                            <ul>
+                                <li>თვითმომსახურების სალარო AI დახმარებით</li>
+                                <li>პროდუქტის ციფრული საინფორმაციო ეკრანები</li>
+                                <li>სმარტ საყიდლების კალათები</li>
+                                <li>მარაგების მართვა რეალურ დროში</li>
+                            </ul>
+
+                            <p>ეს ფლაგმანი ლოკაცია გახდება მოდელი მომავალი მაღაზიების განვითარებისთვის და წარმოაჩენს ჩვენს ერთგულებას საცალო ვაჭრობის ინოვაციებისადმი.</p>
+                        </div>
+                    </div>
+
+                    <!-- Investment Article -->
+                    <div class="article-content" id="investment">
+                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <h1 class="article-title">კომპანია 14 მილიონ ევროზე მეტს აინვესტირებს ქვეყნის მასშტაბით</h1>
+                        <div class="article-meta">
+                            <span class="article-date">29 ოქტომბერი, 2025</span>
+                            <span class="article-department">ფინანსები</span>
+                        </div>
+                        <div class="article-body">
+                            <p>გამოცხადდა მნიშვნელოვანი საინვესტიციო ინიციატივა, რომლის ფარგლებშიც 14 მილიონ ევროზე მეტი გამოიყო მაღაზიების განახლებისთვის მთელი ქვეყნის მასშტაბით, რაც აჩვენებს ჩვენს ერთგულებას მუდმივი გაუმჯობესებისა და მომხმარებელთა გამოცდილების გაუმჯობესებისადმი.</p>
+                            
+                            <h2>ინვესტიციების განაწილება</h2>
+                            <ul>
+                                <li>მაღაზიების რენოვაცია: 8 მილიონი ევრო</li>
+                                <li>ტექნოლოგიების განახლება: 4 მილიონი ევრო</li>
+                                <li>თანამშრომელთა ტრენინგი: 2 მილიონი ევრო</li>
+                            </ul>
+
+                            <h2>მოსალოდნელი შედეგები</h2>
+                            <p>ინვესტიციის შედეგად მოსალოდნელია:</p>
+                            <ul>
+                                <li>მაღაზიის ეფექტურობის 20%-იანი გაუმჯობესება</li>
+                                <li>ენერგომოხმარების 30%-იანი შემცირება</li>
+                                <li>მომხმარებელთა კმაყოფილების გაზრდა</li>
+                            </ul>
+
+                            <p>საინვესტიციო პროგრამა განხორციელდება მომდევნო 12 თვის განმავლობაში, ყოველდღიური ოპერაციების მინიმალური შეფერხებით.</p>
+                        </div>
+                    </div>
+
+                    <!-- Network Modernization Article -->
+                    <!-- Network Modernization Article -->
+                    <div class="article-content" id="network-modernization">
+                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <h1 class="article-title">პარტნიორი ანახლებს სუპერმარკეტების ქსელს</h1>
+                        <div class="article-meta">
+                            <span class="article-date">28 ოქტომბერი, 2025</span>
+                            <span class="article-department">ოპერაციები</span>
+                        </div>
+                        <div class="article-body">
+                            <p>ჩვენი პარტნიორი ჩრდილოეთში განაგრძობს თავისი პოზიციების გაძლიერებას სამი მოდერნიზებული ლოკაციის ხელახალი გახსნით, რაც მნიშვნელოვანი ნაბიჯია მათი ქსელის განვითარების სტრატეგიაში.</p>
+                            
+                            <h2>მოდერნიზაციის მასშტაბი</h2>
+                            <ul>
+                                <li>სრული შიდა რენოვაცია</li>
+                                <li>მაღაზიის განახლებული განლაგება</li>
+                                <li>ახალი აღჭურვილობის დამონტაჟება</li>
+                                <li>გაუმჯობესებული პროდუქტის გამოფენა</li>
+                            </ul>
+
+                            <h2>გავლენა</h2>
+                            <p>მოდერნიზაციის პროგრამის შედეგად მიღწეულია:</p>
+                            <ul>
+                                <li>მაღაზიის ტევადობის 25%-იანი ზრდა</li>
+                                <li>გაუმჯობესებული შოპინგის გამოცდილება</li>
+                                <li>უკეთესი ენერგოეფექტურობა</li>
+                            </ul>
+
+                            <p>ეს გაუმჯობესებები წარმოადგენს ჩვენს მუდმივ ერთგულებას თანამედროვე, ეფექტური სავაჭრო სივრცეების შენარჩუნებისადმი, რომლებიც აკმაყოფილებს მომხმარებელთა საჭიროებებს.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cancer Awareness Article -->
+                    <div class="article-content" id="cancer-awareness">
+                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <h1 class="article-title">ქვეყნის ორგანიზაციები მხარს უჭერენ ძუძუს კიბოს შესახებ ცნობადობის ამაღლებას</h1>
+                        <div class="article-meta">
+                            <span class="article-date">27 ოქტომბერი, 2025</span>
+                            <span class="article-department">მარკეტინგი</span>
+                        </div>
+                        <div class="article-body">
+                            <p>ჩვენი ქვეყნის ორგანიზაციები გაერთიანდნენ ძუძუს კიბოს შესახებ ცნობადობის ამაღლების თვის მხარდასაჭერად, წამოიწყეს სხვადასხვა ინიციატივები ცნობადობის ასამაღლებლად და თანხების მოსაგროვებლად ამ მნიშვნელოვანი მიზნისთვის.</p>
+                            
+                            <h2>კამპანიის აქტივობები</h2>
+                            <ul>
+                                <li>ვარდისფერი თემატური პროდუქტების პრომოციები</li>
+                                <li>მომხმარებელთა შემოწირულობის პროგრამები</li>
+                                <li>თანამშრომელთა ცნობადობის ღონისძიებები</li>
+                                <li>პარტნიორობა ადგილობრივ ჯანდაცვის ორგანიზაციებთან</li>
+                            </ul>
+
+                            <h2>გავლენის მიზნები</h2>
+                            <p>კამპანიის მიზანია:</p>
+                            <ul>
+                                <li>500,000 ევროს მოგროვება კვლევისთვის</li>
+                                <li>ცნობადობის 40%-ით გაზრდა</li>
+                                <li>ადგილობრივი თემების მხარდაჭერა</li>
+                            </ul>
+
+                            <p>ეს ინიციატივა აჩვენებს ჩვენს ერთგულებას ჯანმრთელობის მნიშვნელოვანი საკითხების მხარდაჭერისა და ჩვენს თემებზე დადებითი გავლენის მოხდენისადმი.</p>
+                        </div>
+                    </div>                    <!-- Cancer Awareness Article -->
+                    <div class="article-content" id="cancer-awareness">
+                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <h1 class="article-title">ქვეყნის ორგანიზაციები მხარს უჭერენ ძუძუს კიბოს შესახებ ცნობადობის ამაღლებას</h1>
+                        <div class="article-meta">
+                            <span class="article-date">27 ოქტომბერი, 2025</span>
+                            <span class="article-department">მარკეტინგი</span>
+                        </div>
+                        <div class="article-body">
+                            <p>ჩვენი ქვეყნის ორგანიზაციები გაერთიანდნენ ძუძუს კიბოს შესახებ ცნობადობის ამაღლების თვის მხარდასაჭერად, და წამოიწყეს სხვადასხვა ინიციატივები ცნობადობის ამაღლებისა და თანხების მოსაგროვებლად ამ მნიშვნელოვანი მიზნისთვის.</p>
+                            
+                            <h2>კამპანიის აქტივობები</h2>
+                            <ul>
+                                <li>ვარდისფერი თემატური პროდუქტების პრომოციები</li>
+                                <li>მომხმარებელთა შემოწირულობის პროგრამები</li>
+                                <li>თანამშრომელთა ცნობადობის ღონისძიებები</li>
+                                <li>პარტნიორობა ადგილობრივ ჯანდაცვის ორგანიზაციებთან</li>
+                            </ul>
+
+                            <h2>გავლენის მიზნები</h2>
+                            <p>კამპანიის მიზანია:</p>
+                            <ul>
+                                <li>500,000 ევროს მოგროვება კვლევისთვის</li>
+                                <li>ცნობადობის 40%-ით გაზრდა</li>
+                                <li>ადგილობრივი თემების მხარდაჭერა</li>
+                            </ul>
+
+                            <p>ეს ინიციატივა წარმოაჩენს ჩვენს ერთგულებას ჯანმრთელობის მნიშვნელოვანი საკითხების მხარდაჭერისა და ჩვენს თემებზე დადებითი გავლენის მოხდენისადმი.</p>
+                        </div>
+                    </div>
+                </div>                    <!-- Add more news cards as needed -->
+                </div>
+            </div>
+
+            <!-- Events Content -->
+            <div id="events" class="content">
+                <div class="section">
+                    <h2 class="section-title">კომპანიის ღონისძიებები</h2>
+                    
+                    <!-- Toggle for Past/Future Events -->
+                    <div class="toggle-container">
+                        <button class="toggle-btn active" onclick="toggleEvents('future', this)">მომავალი</button>
+                        <button class="toggle-btn" onclick="toggleEvents('past', this)">წარსული</button>
+                    </div>
+
+                    <!-- Future Events -->
+                    <div id="futureEvents">
+                        <div class="event-card" style="background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);">
+                            <div class="event-category">ელ.კომერცია</div>
+                            <div class="event-title">ელ.კომერციის სამოქმედო ჯგუფის შეხვედრა</div>
+                            <div class="event-details">
+                                <div class="event-dates">
+                                    <div>დაწყება: 04/11/2025</div>
+                                    <div>დასრულება: 04/11/2025</div>
+                                </div>
+                                <div class="event-location">
+                                    <div>ადგილმდებარეობა</div>
+                                    <div>ონლაინ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Past Events (Hidden by default) -->
+                    <div id="pastEvents" style="display: none;">
+                        <!-- Add past events here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div id="settings" class="content">
+                <div style="text-align: center; padding: 40px 20px;">
+                    <h2 style="color: #e74c3c; font-size: 36px; margin-bottom: 30px;">კომპანია</h2>
+                </div>
+
+                <div class="settings-item" onclick="changePassword()">
+                    <div class="settings-icon">🔒</div>
+                    <div class="settings-text">პაროლის შეცვლა</div>
+                </div>
+
+                <div class="settings-item" onclick="viewTerms()">
+                    <div class="settings-icon">📄</div>
+                    <div class="settings-text">წესები და პირობები</div>
+                </div>
+
+                <div class="settings-item" onclick="logout()">
+                    <div class="settings-icon">↩️</div>
+                    <div class="settings-text">გასვლა</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active" onclick="showSection('news', this)">
+                <div class="nav-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                    </svg>
+                </div>
+                <div class="nav-label">სიახლეები</div>
+            </div>
+            <div class="nav-item" onclick="showSection('events', this)">
+                <div class="nav-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1" />
+                    </svg>
+                </div>
+                <div class="nav-label">ღონისძიებები</div>
+            </div>
+            <div class="nav-item" onclick="showSection('handbook', this)">
+                <div class="nav-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5V5Z" />
+                    </svg>
+                </div>
+                <div class="nav-label">Handbook</div>
+            </div>
+            <div class="nav-item" onclick="showSection('settings', this)">
+                <div class="nav-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+                    </svg>
+                </div>
+                <div class="nav-label">Settings</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

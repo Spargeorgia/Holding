@@ -1,0 +1,18 @@
+{
+  "name": "daily-group",
+  "version": "1.0.0",
+  "description": "Daily GROUP Web Application",
+  "main": "handbook.html",
+  "scripts": {
+    "start": "live-server --port=8080 --open=handbook.html",
+    "dev": "browser-sync start --server --files '*.html, *.css, *.js' --port 3000 --no-notify",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": ["handbook", "company", "webapp"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "browser-sync": "^2.29.3"
+  }
+}
