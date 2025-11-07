@@ -70,7 +70,7 @@
                     <h2 class="section-title">ორგანიზაციული სტრუქტურა</h2>
                     <div class="org-list">
                         <div class="org-item" onclick="showHandbookSection('marketing')">
-                            <div class="org-icon">🎯</div>
+                            <div class="org-icon"><img src="icons/marketing.svg" alt="Phone Icon" style="width: 35px; height: 35px;"></div>
                             <div class="org-content">
                                 <div class="org-name">მარკეტინგის დეპარტამენტი</div>
                                 <div class="org-description">ბრენდის მართვა, რეკლამა და ბაზრის კვლევა</div>
@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="org-item" onclick="showHandbookSection('ecommerce')">
-                            <div class="org-icon">🛒</div>
+                            <div class="org-icon"><img src="icons/e-commerce.svg" alt="Phone Icon" style="width: 35px; height: 35px;"></div>
                             <div class="org-content">
                                 <div class="org-name">ელექტრონული კომერცია</div>
                                 <div class="org-description">ონლაინ გაყიდვები და ციფრული პლატფორმები</div>
@@ -88,7 +88,7 @@
                         </div>
 
                         <div class="org-item" onclick="showHandbookSection('operations')">
-                            <div class="org-icon">⚙️</div>
+                            <div class="org-icon"><img src="icons/operations.svg" alt="Phone Icon" style="width: 35px; height: 35px;"></div>
                             <div class="org-content">
                                 <div class="org-name">ოპერაციები</div>
                                 <div class="org-description">მაღაზიების ოპერაციები და ლოჯისტიკის მართვა</div>
@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="org-item" onclick="showHandbookSection('finance')">
-                            <div class="org-icon">💰</div>
+                            <div class="org-icon"><img src="icons/finance.svg" alt="Phone Icon" style="width: 35px; height: 35px;"></div>
                             <div class="org-content">
                                 <div class="org-name">ფინანსები</div>
                                 <div class="org-description">ფინანსური დაგეგმვა და მართვა</div>
@@ -106,7 +106,7 @@
                         </div>
 
                         <div class="org-item" onclick="showHandbookSection('hr')">
-                            <div class="org-icon">👥</div>
+                            <div class="org-icon"><img src="icons/human resources.svg" alt="Phone Icon" style="width: 35px; height: 35px;"></div>
                             <div class="org-content">
                                 <div class="org-name">ადამიანური რესურსები</div>
                                 <div class="org-description">თანამშრომელთა მართვა და განვითარება</div>
@@ -115,7 +115,7 @@
                         </div>
 
                         <div class="org-item" onclick="showHandbookSection('it')">
-                            <div class="org-icon">💻</div>
+                            <div class="org-icon"><img src="icons/IT and digital.svg" alt="Phone Icon" style="width: 35px; height: 35px;"></div>
                             <div class="org-content">
                                 <div class="org-name">IT და ციფრული</div>
                                 <div class="org-description">ტექნოლოგიური ინფრასტრუქტურა და ციფრული გადაწყვეტილებები</div>
@@ -124,7 +124,7 @@
                         </div>
 
                         <div class="org-item" onclick="showHandbookSection('retail')">
-                            <div class="org-icon">🏪</div>
+                            <div class="org-icon"><img src="icons/retail development.svg" alt="Phone Icon" style="width: 35px; height: 35px;"></div>
                             <div class="org-content">
                                 <div class="org-name">საცალო ვაჭრობის განვითარება</div>
                                 <div class="org-description">მაღაზიების გაფართოება და საცალო სტრატეგია</div>
@@ -144,7 +144,7 @@
                         <!-- News Cards - Marketing -->
                         <div class="handbook-news" data-department="marketing">
                             <div class="card" onclick="showArticle('marketing-campaign')">
-                                <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                                <div class="card-image" style="background-image: url('images/mini/7.png')"></div>
                                 <div class="card-content">
                                     <div class="card-title">გლობალური მარკეტინგული კამპანიის დაწყება</div>
                                     <div class="card-date">1 ნოემბერი, 2025</div>
@@ -159,7 +159,7 @@
                         <!-- News Cards - E-Commerce -->
                         <div class="handbook-news" data-department="ecommerce">
                             <div class="card" onclick="showArticle('digital-platform')">
-                                <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                                <div class="card-image" style="background-image: url('images/mini/6.png')"></div>
                                 <div class="card-content">
                                     <div class="card-title">ციფრული პლატფორმის განახლება</div>
                                     <div class="card-date">30 ოქტომბერი, 2025</div>
@@ -174,7 +174,7 @@
                         <!-- News Cards - Operations -->
                         <div class="handbook-news" data-department="operations">
                             <div class="card" onclick="showArticle('supply-chain')">
-                                <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                                <div class="card-image" style="background-image: url('images/mini/5.png')"></div>
                                 <div class="card-content">
                                     <div class="card-title">მიწოდების ჯაჭვის ოპტიმიზაცია</div>
                                     <div class="card-date">28 ოქტომბერი, 2025</div>
@@ -191,11 +191,11 @@
                 <!-- Article View Section -->
                 <div id="article-view" class="section article-section" style="display: none;">
                     <div class="section-header">
-                        <button class="back-button" onclick="closeArticle()">← Back</button>
+                        <button class="back-button" onclick="closeArticle()">← უკან</button>
                     </div>
                     <!-- Marketing Campaign Article -->
                     <div class="article-content" id="marketing-campaign">
-                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <div class="article-hero-image" style="background-image: url('images/5.png')"></div>
                         <h1 class="article-title">გლობალური მარკეტინგული კამპანიის დაწყება</h1>
                         <div class="article-meta">
                             <span class="article-date">1 ნოემბერი, 2025</span>
@@ -226,7 +226,7 @@
 
                     <!-- Digital Platform Article -->
                     <div class="article-content" id="digital-platform">
-                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <div class="article-hero-image" style="background-image: url('images/6.png')"></div>
                         <h1 class="article-title">ციფრული პლატფორმის განახლება</h1>
                         <div class="article-meta">
                             <span class="article-date">30 ოქტომბერი, 2025</span>
@@ -256,36 +256,37 @@
 
                     <!-- Supply Chain Article -->
                     <div class="article-content" id="supply-chain">
-                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
-                        <h1 class="article-title">Supply Chain Optimization</h1>
+                        <div class="article-hero-image" style="background-image: url('images/5.png')"></div>
+                        <h1 class="article-title">მიწოდების ჯაჭვის ოპტიმიზაცია</h1>
                         <div class="article-meta">
-                            <span class="article-date">October 28, 2025</span>
-                            <span class="article-department">Operations Department</span>
+                            <span class="article-date">28 ოქტომბერი, 2025</span>
+                            <span class="article-department">ოპერაციების დეპარტამენტი</span>
                         </div>
                         <div class="article-body">
-                            <p>A new logistics system implementation has significantly improved our supply chain efficiency, resulting in faster delivery times and reduced costs.</p>
+                            <p>ახალი ლოჯისტიკური სისტემის დანერგვამ მნიშვნელოვნად გააუმჯობესა ჩვენი მიწოდების ჯაჭვის ეფექტურობა, რამაც გამოიწვია მიწოდების დროის შემცირება და ხარჯების დაზოგვა.</p>
                             
-                            <h2>System Features</h2>
+                            <h2>სისტემის მახასიათებლები</h2>
                             <ul>
-                                <li>Real-time tracking and monitoring</li>
-                                <li>Automated route optimization</li>
-                                <li>Predictive inventory management</li>
-                                <li>Integration with supplier systems</li>
+                                <li>რეალურ დროში თვალთვალი და მონიტორინგი</li>
+                                <li>მარშრუტის ავტომატური ოპტიმიზაცია</li>
+                                <li>მარაგების პროგნოზირებადი მართვა</li>
+                                <li>ინტეგრაცია მომწოდებლის სისტემებთან</li>
                             </ul>
 
-                            <h2>Impact Analysis</h2>
+                            <h2>გავლენის ანალიზი</h2>
                             <ul>
-                                <li>30% reduction in delivery times</li>
-                                <li>25% decrease in transportation costs</li>
-                                <li>40% improvement in inventory accuracy</li>
-                                <li>20% reduction in wastage</li>
+                                <li>მიწოდების დროის 30%-ით შემცირება</li>
+                                <li>ტრანსპორტირების ხარჯების 25%-ით შემცირება</li>
+                                <li>მარაგების სიზუსტის 40%-ით გაუმჯობესება</li>
+                                <li>დანაკარგების 20%-ით შემცირება</li>
                             </ul>
 
-                            <p>This optimization project demonstrates our commitment to operational excellence and continuous improvement in our supply chain management.</p>
+                            <p>ეს ოპტიმიზაციის პროექტი აჩვენებს ჩვენს ერთგულებას ოპერაციული სრულყოფილებისადმი და მიწოდების ჯაჭვის მართვის მუდმივი გაუმჯობესებისადმი.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <!-- Figures Content -->
             <div id="figures" class="content">
@@ -360,38 +361,38 @@
                     <h2 class="section-title">ცენტრალური ოფისი</h2>
                     
                     <div class="company-info">
-                        <h3>SPAR International</h3>
-                        <p>Rokin 99-101<br>
-                        1012 KM Amsterdam</p>
+                        <h3>Daily GROUP</h3>
+                        <p>Tengiz Chantladze Street<br>
+                        40, khaketi Higway</p>
                     </div>
 
                     <div class="contact-details">
                         <div class="contact-item">
-                            <span class="contact-icon">📞</span>
+                           <span class="contact-icon"><img src="icons/phone.svg" alt="Phone Icon" style="width: 27px; height: 25px;"></span>
                             <span>0031 20 626 6749</span>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">✉️</span>
-                            <span>info@spar-international.com</span>
+                            <span class="contact-icon"><img  src="icons/email.svg" alt="email" style="width: 27px; height: 25px;"></span>
+                            <span>marketing@dailygroup.ge</span>
                         </div>
                     </div>
 
                     <div class="team-section">
-                        <h3 class="team-title">მენეჯმენტის გუნდი</h3>
+                        <h3 class="team-title">მარკეტინგის გუნდი</h3>
                         
                         <div class="team-member">
-                            <span class="member-icon">✉️</span>
+                            <span class="member-icon"><img  src="icons/email.svg" alt="email" style="width: 27px; height: 25px;"></span>
                             <div class="member-info">
-                                <div class="member-name">ბ-ნი ტობიას ვასმუტი</div>
-                                <div class="member-role">აღმასრულებელი დირექტორი</div>
+                                <div class="member-name">თათული გულბიანი</div>
+                                <div class="member-role">მარკეტინგის დირექტორი</div>
                             </div>
                         </div>
 
                         <div class="team-member">
-                            <span class="member-icon">✉️</span>
+                            <span class="member-icon"><img  src="icons/email.svg" alt="email" style="width: 27px; height: 25px;"></span>
                             <div class="member-info">
-                                <div class="member-name">ბ-ნი დომინიკ ჰოლი</div>
-                                <div class="member-role">SPAR International-ის პრეზიდენტი</div>
+                                <div class="member-name">ნინა ჩხეიძე</div>
+                                <div class="member-role">SPAR ბრენდ მენეჯერი</div>
                             </div>
                         </div>
 
@@ -408,9 +409,9 @@
                     <!-- Image Slider -->
                     <div class="image-slider">
                         <div class="slider-container" id="sliderContainer">
-                            <div class="slide">კომპანიის შენობა 1</div>
-                            <div class="slide">კომპანიის შენობა 2</div>
-                            <div class="slide">კომპანიის შენობა 3</div>
+                            <div class="slide"><img src="images/slide1.jpg" alt="კომპანიის შენობა 1"></div>
+                             <div class="slide"><img src="images/slide2.jpg" alt="კომპანიის შენობა 1"></div>
+                             <div class="slide"><img src="images/slide3.jpg" alt="კომპანიის შენობა 1"></div>
                         </div>
                         <div class="slider-dots">
                             <span class="dot active" onclick="goToSlide(0)"></span>
@@ -422,7 +423,7 @@
                     <!-- News Cards -->
                 <!-- News Cards -->
                                 <div class="card" data-department="retail" onclick="showArticle('flagship-store')">
-                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-image" style="background-image: url(/images/mini/1.png)"></div>
                     <div class="card-content">
                         <div class="card-title">კომპანია ხსნის ახალ ფლაგმან სუპერმარკეტს</div>
                         <div class="card-date">31 ოქტომბერი, 2025</div>
@@ -434,7 +435,7 @@
                 </div>
 
                 <div class="card" data-department="finance" onclick="showArticle('investment')">
-                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-image" style="background-image: url('images/mini/2.png')"></div>
                     <div class="card-content">
                         <div class="card-title">კომპანია 14 მილიონ ევროზე მეტს აინვესტირებს ქვეყნის მასშტაბით</div>
                         <div class="card-date">29 ოქტომბერი, 2025</div>
@@ -446,19 +447,19 @@
                 </div>
 
                 <div class="card" data-department="operations" onclick="showArticle('modernization')">
-                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-image" style="background-image: url('images/mini/3.png')"></div>
                     <div class="card-content">
-                        <div class="card-title">პარტნიორი ანახლებს სუპერმარკეტების ქსელს</div>
+                        <div class="card-title">დეილი ანახლებს სუპერმარკეტების ქსელს</div>
                         <div class="card-date">28 ოქტომბერი, 2025</div>
                         <div class="card-description">
-                            ქვეყნის ჩრდილოეთში, ჩვენი პარტნიორი განაგრძობს მაღაზიათა ქსელის განვითარებას მოდერნიზაციისა და გაფართოების გზით.
+                            დეილი განაგრძობს მაღაზიათა ქსელის განვითარებას მოდერნიზაციისა და გაფართოების გზით.
                         </div>
                     </div>
                     <div class="card-arrow">›</div>
                 </div>
 
                 <div class="card" data-department="finance" onclick="showArticle('investment')">
-                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-image" style="background-image: url('images/mini/2.png')"></div>
                     <div class="card-content">
                         <div class="card-title">კომპანია 14 მილიონ ევროზე მეტს აინვესტირებს ქვეყნის მასშტაბით</div>
                         <div class="card-date">29 ოქტომბერი, 2025</div>
@@ -470,7 +471,7 @@
                 </div>
 
                 <div class="card" data-department="operations" onclick="showArticle('network-modernization')">
-                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-image" style="background-image: url('images/mini/3.png')"></div>
                     <div class="card-content">
                         <div class="card-title">პარტნიორი ანახლებს სუპერმარკეტების ქსელს</div>
                         <div class="card-date">28 ოქტომბერი, 2025</div>
@@ -482,7 +483,7 @@
                 </div>
 
                 <div class="card" data-department="marketing" onclick="showArticle('cancer-awareness')">
-                    <div class="card-image" style="background-image: url('https://placehold.co/600x400/png')"></div>
+                    <div class="card-image" style="background-image: url('images/mini/4.png')"></div>
                     <div class="card-content">
                         <div class="card-title">ქვეყნის ორგანიზაციები მხარს უჭერენ ძუძუს კიბოს შესახებ ცნობადობის ამაღლებას</div>
                         <div class="card-date">27 ოქტომბერი, 2025</div>
@@ -501,7 +502,7 @@
 
                     <!-- Flagship Store Article -->
                     <div class="article-content" id="flagship-store">
-                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <div class="article-hero-image" style="background-image: url('images/3.png')"></div>
                         <h1 class="article-title">კომპანია ხსნის ახალ ფლაგმან სუპერმარკეტს</h1>
                         <div class="article-meta">
                             <span class="article-date">31 ოქტომბერი, 2025</span>
@@ -533,7 +534,7 @@
 
                     <!-- Investment Article -->
                     <div class="article-content" id="investment">
-                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <div class="article-hero-image" style="background-image: url('images/2.png')"></div>
                         <h1 class="article-title">კომპანია 14 მილიონ ევროზე მეტს აინვესტირებს ქვეყნის მასშტაბით</h1>
                         <div class="article-meta">
                             <span class="article-date">29 ოქტომბერი, 2025</span>
@@ -560,8 +561,6 @@
                             <p>საინვესტიციო პროგრამა განხორციელდება მომდევნო 12 თვის განმავლობაში, ყოველდღიური ოპერაციების მინიმალური შეფერხებით.</p>
                         </div>
                     </div>
-
-                    <!-- Network Modernization Article -->
                     <!-- Network Modernization Article -->
                     <div class="article-content" id="network-modernization">
                         <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
@@ -595,7 +594,7 @@
 
                     <!-- Cancer Awareness Article -->
                     <div class="article-content" id="cancer-awareness">
-                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
+                        <div class="article-hero-image" style="background-image: url('images/1.png')"></div>
                         <h1 class="article-title">ქვეყნის ორგანიზაციები მხარს უჭერენ ძუძუს კიბოს შესახებ ცნობადობის ამაღლებას</h1>
                         <div class="article-meta">
                             <span class="article-date">27 ოქტომბერი, 2025</span>
@@ -622,34 +621,36 @@
 
                             <p>ეს ინიციატივა აჩვენებს ჩვენს ერთგულებას ჯანმრთელობის მნიშვნელოვანი საკითხების მხარდაჭერისა და ჩვენს თემებზე დადებითი გავლენის მოხდენისადმი.</p>
                         </div>
-                    </div>                    <!-- Cancer Awareness Article -->
-                    <div class="article-content" id="cancer-awareness">
-                        <div class="article-hero-image" style="background-image: url('https://placehold.co/1200x600/png')"></div>
-                        <h1 class="article-title">ქვეყნის ორგანიზაციები მხარს უჭერენ ძუძუს კიბოს შესახებ ცნობადობის ამაღლებას</h1>
+                    </div>                    
+                    <!-- Cancer Awareness Article -->
+                    <div class="article-content" id="modernization">
+                        <div class="article-hero-image" style="background-image: url('images/4.png')"></div>
+                        <h1 class="article-title">დეილი ანახლებს მაღაზიების ფორმატს</h1>
                         <div class="article-meta">
                             <span class="article-date">27 ოქტომბერი, 2025</span>
                             <span class="article-department">მარკეტინგი</span>
                         </div>
                         <div class="article-body">
-                            <p>ჩვენი ქვეყნის ორგანიზაციები გაერთიანდნენ ძუძუს კიბოს შესახებ ცნობადობის ამაღლების თვის მხარდასაჭერად, და წამოიწყეს სხვადასხვა ინიციატივები ცნობადობის ამაღლებისა და თანხების მოსაგროვებლად ამ მნიშვნელოვანი მიზნისთვის.</p>
+                            <p>დეილი აგრძელებს მაღაზიათა ქსელის განვითარებას მოდერნიზაციისა და გაფართოების გზით, რათა მომხმარებლებს შესთავაზოს გაუმჯობესებული სავაჭრო გამოცდილება. ამ ინიციატივის ფარგლებში, ჩვენ ვხსნით განახლებულ სუპერმარკეტებს, რომლებიც აღჭურვილია უახლესი ტექნოლოგიებით და მომხმარებელზე ორიენტირებული დიზაინით.</p>
                             
-                            <h2>კამპანიის აქტივობები</h2>
+                            <h2>განახლების ძირითადი მახასიათებლები</h2>
                             <ul>
-                                <li>ვარდისფერი თემატური პროდუქტების პრომოციები</li>
-                                <li>მომხმარებელთა შემოწირულობის პროგრამები</li>
-                                <li>თანამშრომელთა ცნობადობის ღონისძიებები</li>
-                                <li>პარტნიორობა ადგილობრივ ჯანდაცვის ორგანიზაციებთან</li>
+                                <li>თანამედროვე ინტერიერი და განლაგება</li>
+                                <li>ენერგოეფექტური განათება და გაგრილების სისტემები</li>
+                                <li>გაფართოებული პროდუქციის ასორტიმენტი</li>
+                                <li>თვითმომსახურების სალაროები და ციფრული ეკრანები</li>
                             </ul>
 
-                            <h2>გავლენის მიზნები</h2>
-                            <p>კამპანიის მიზანია:</p>
+                            <h2>მოსალოდნელი შედეგები</h2>
+                            <p>ამ მოდერნიზაციის პროგრამის შედეგად, ჩვენ ველოდებით:</p>
                             <ul>
-                                <li>500,000 ევროს მოგროვება კვლევისთვის</li>
-                                <li>ცნობადობის 40%-ით გაზრდა</li>
-                                <li>ადგილობრივი თემების მხარდაჭერა</li>
+                                <li>მომხმარებელთა კმაყოფილების ზრდა</li>
+                                <li>ოპერაციული ეფექტურობის გაუმჯობესება</li>
+                                <li>გაყიდვების მოცულობის ზრდა</li>
+                                <li>მდგრადი განვითარების ხელშეწყობა</li>
                             </ul>
 
-                            <p>ეს ინიციატივა წარმოაჩენს ჩვენს ერთგულებას ჯანმრთელობის მნიშვნელოვანი საკითხების მხარდაჭერისა და ჩვენს თემებზე დადებითი გავლენის მოხდენისადმი.</p>
+                            <p>ეს ინიციატივა ხაზს უსვამს ჩვენს მუდმივ ერთგულებას ინოვაციებისადმი და მომხმარებლებისთვის საუკეთესო სავაჭრო გარემოს შექმნისადმი.</p>
                         </div>
                     </div>
                 </div>                    <!-- Add more news cards as needed -->
@@ -669,7 +670,7 @@
 
                     <!-- Future Events -->
                     <div id="futureEvents">
-                        <div class="event-card" style="background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);">
+                        <div class="event-card" style="background: linear-gradient(135deg, #f8ba95 0%, #ffdac7 100%);">
                             <div class="event-category">ელ.კომერცია</div>
                             <div class="event-title">ელ.კომერციის სამოქმედო ჯგუფის შეხვედრა</div>
                             <div class="event-details">
@@ -891,6 +892,8 @@
             checkAdmin();
             displayNews();
         });
+        
     </script>
+    
 </body>
 </html>

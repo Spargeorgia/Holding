@@ -8,7 +8,7 @@ h1, h2, h3,
 .team-title,
 .department-title {
     font-family: 'TBCContracticaCAPS-Black', Arial, sans-serif !important;
-    color: rgb(0, 102, 107) !important;
+    color: rgb(1, 52, 55) !important;
 }
 
 /* Regular Text */
@@ -39,11 +39,11 @@ p,
 .org-name {
     font-family: 'TBCContracticaCAPS-Black', Arial, sans-serif !important;
     font-weight: bold;
-    color: rgb(0, 102, 107) !important;
+    color: rgb(1, 52, 55) !important;
 }
 
 /* Event Category - Headers */
 .event-category {
     font-family: 'TBCContracticaCAPS-Black', Arial, sans-serif !important;
-    color: rgb(0, 102, 107) !important;
+    color: rgb(1, 52, 55) !important;
 }
