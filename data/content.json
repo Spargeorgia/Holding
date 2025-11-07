@@ -1,13 +1,2 @@
-{
-  "articles": [
-    {
-      "id": "article8",
-      "department": "მარკეტინგის დეპარტამენტი",
-      "title": "ახალი ამბები 8",
-      "date": "1 ნოემბერი, 2025",
-      "description": "ეს არის ახალი ამბების აღწერა 8.",
-      "image": "images/mini/8.png"
-    }
-  ],
-  "slider": []
-}
+{\
+articles\: [], \slider\: []}
